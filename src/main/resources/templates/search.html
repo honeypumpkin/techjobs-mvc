@@ -38,6 +38,25 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <p th:unless="${jobs} and ${jobs.size()}">Jobs not found</p>
+
+
+
+    <table th:each = "job : ${jobs}" class="job-listing">
+
+
+        <tr th:each = "detail : ${job.entrySet()}">
+
+
+            <td th:text="${detail.key}"></td>
+            <td th:text="${detail.value}"></td>
+
+
+
+        </tr>
+
+    </table>
+
 </div>
 
 </body>
